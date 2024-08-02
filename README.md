@@ -8,7 +8,7 @@ mvn mn:run
 Test:
 
 ```shell
-curl "http://localhost:8080/translate?english=Hello
+curl "http://localhost:8080/translate?english=Hello"
 ```
 
 Build a native image:
