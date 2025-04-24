@@ -7,13 +7,17 @@ import java.util.List;
 
 @Singleton
 public class Library {
+	private final BookRepository bookRepository;
 
-	private static final List<Book> BOOKS = Arrays.asList(
-			new Book("TOG", "Sarah J Mass"),
-			new Book("ACOTAR", "Sarah J Mass"));
+	public Library(BookRepository bookRepository) {
+		this.bookRepository = bookRepository;
+	}
 
 	public List<Book> getBooks() {
+		return bookRepository.findAll();
+	}
 
-		return BOOKS;
+	public void addBook(Book book) {
+		bookRepository.save(book);
 	}
 }
