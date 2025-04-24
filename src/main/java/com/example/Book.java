@@ -3,15 +3,6 @@ package com.example;
 import io.micronaut.serde.annotation.Serdeable;
 
 @Serdeable
-public class Book {
+public record Book (String name, String author) {
 
-    private final String name;
-
-    public Book(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 }
