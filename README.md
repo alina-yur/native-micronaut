@@ -21,4 +21,4 @@ mvn package -Dpackaging=native-image
 
 ## The Application
 
-Now let's design our application. It will be a home library application, containing books and exposing several endpoints to retrieve them.
+Now let's design our application. It will be a home library application, containing books and exposing several endpoints to retrieve them. For that, we added Library and Book classes, and a Controller, Service, and Repository to work with the data and interact with the user.
