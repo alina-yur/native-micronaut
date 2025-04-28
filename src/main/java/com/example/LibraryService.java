@@ -6,13 +6,13 @@ import java.util.List;
 @Singleton
 public class LibraryService {
 
-private final Library library;
+	private final BookRepository bookRepository;
 
-	public LibraryService(Library library) {
-		this.library = library;
+	public LibraryService(BookRepository bookRepository) {
+		this.bookRepository = bookRepository;
 	}
 
 	public List<Book> getAllBooks() {
-        return library.getBooks();
-    }
+		return bookRepository.findAll();
+	}
 }

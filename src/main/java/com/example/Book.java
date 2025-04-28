@@ -13,20 +13,12 @@ import jakarta.validation.constraints.NotBlank;
 @Introspected
 @MappedEntity
 public record Book(
-		@Id
-		@GeneratedValue
-		@TypeDef(type = DataType.LONG)
-		Long id,
+		@Id @GeneratedValue @TypeDef(type = DataType.LONG) Long id,
 
-		@NotBlank
-		@TypeDef(type = DataType.STRING)
-		String name,
+		@NotBlank @TypeDef(type = DataType.STRING) String name,
 
-		@NotBlank
-		@TypeDef(type = DataType.STRING)
-		String author
-) {
-	// Add a constructor without id for creating new books
+		@NotBlank @TypeDef(type = DataType.STRING) String author) {
+
 	public Book(String name, String author) {
 		this(null, name, author);
 	}
