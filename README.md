@@ -19,3 +19,6 @@ mvn package -Dpackaging=native-image
 ./target/library
 ```
 
+## The Application
+
+Now let's design our application. It will be a home library application, containing books and exposing several endpoints to retrieve them.
