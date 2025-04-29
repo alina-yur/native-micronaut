@@ -1,8 +1,6 @@
 package com.example;
 
 import jakarta.inject.Singleton;
-
-import java.util.Arrays;
 import java.util.List;
 
 @Singleton
