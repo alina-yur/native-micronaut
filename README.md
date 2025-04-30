@@ -31,3 +31,4 @@ To do
 
 [] try running MySQL via Rancher
 [] different app properties for h2 and mysql (what about the annotations then)?
+[] override `toString` in `Book` for formatted output
