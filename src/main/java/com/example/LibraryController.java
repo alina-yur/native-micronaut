@@ -4,7 +4,6 @@ import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import java.util.List;
 
-
 @Controller("/books")
 public class LibraryController {
 
@@ -14,7 +13,7 @@ public class LibraryController {
         this.libraryService = libraryService;
     }
 
-    @Get(produces = "application/json")
+    @Get
     public List<Book> getAllBooks() {
         return libraryService.getAllBooks();
     }

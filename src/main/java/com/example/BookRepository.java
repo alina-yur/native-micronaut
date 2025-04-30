@@ -6,7 +6,7 @@ import io.micronaut.data.model.query.builder.sql.Dialect;
 
 import java.util.List;
 
-@JdbcRepository(dialect = Dialect.MYSQL)
+@JdbcRepository(dialect = Dialect.H2)
 public interface BookRepository extends CrudRepository<Book, Long> {
 
 	List<Book> findAll();

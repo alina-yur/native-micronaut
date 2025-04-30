@@ -1,4 +1,4 @@
-# GraalVM & Micronaut 🤝
+# Native Micronaut 👩‍🚀
 
 ## Getting Started
 
@@ -22,3 +22,12 @@ mvn package -Dpackaging=native-image
 ## The Application
 
 Now let's design our application. It will be a home library application, containing books and exposing several endpoints to retrieve them. For that, we added Library and Book classes, and a Controller, Service, and Repository to work with the data and interact with the user.
+
+# Working with a Database
+
+The Micronaut team highly encourages using [Flyway](https://micronaut-projects.github.io/micronaut-flyway/latest/guide/) for managing database schemas. Note that flyway migrations require full control over schema management. If you manually configure `datasources.default.schema-generate`, such as set it to `CREATE_DROP`, set it to `NONE` to ensure that only Flyway manages your schema.
+
+To do
+
+[] try running MySQL via Rancher
+[] different app properties for h2 and mysql (what about the annotations then)?

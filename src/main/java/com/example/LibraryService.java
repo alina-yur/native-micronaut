@@ -15,4 +15,12 @@ public class LibraryService {
 	public List<Book> getAllBooks() {
 		return bookRepository.findAll();
 	}
+
+	public Book addBook(Book book) {
+		return bookRepository.save(book);
+	}
+
+	public Book getBook(Long id) {
+		return bookRepository.findById(id).orElse(null);
+	}
 }
