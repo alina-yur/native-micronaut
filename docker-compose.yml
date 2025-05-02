@@ -1,20 +1,18 @@
-version: '3'
+version: '3.8'
 
 services:
-  mysql:
+  mysql_db:
     image: mysql:8.0
-    restart: always
+    container_name: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: library
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u", "${MYSQL_USER}", "-p${MYSQL_PASSWORD}"] # Check connectivity
+      interval: 10s
       timeout: 5s
-      retries: 10
-
-volumes:
-  mysql-data:
+      retries: 5
