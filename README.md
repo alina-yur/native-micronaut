@@ -35,3 +35,4 @@ To do
 
 [] try running MySQL via Rancher
 [] different app properties for h2 and mysql (what about the annotations then)?
+[] SBOM: The Micronaut Gradle plugin applies the Micronaut Bill of Materials (BOM). However, if you were applying the BOM directly to your build. You should use io.micronaut.platform:micronaut-platform.
