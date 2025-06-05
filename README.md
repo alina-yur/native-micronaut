@@ -31,6 +31,29 @@ The Micronaut team highly encourages using [Flyway](https://micronaut-projects.g
 
 For the MySQL settings and config, go to the `mysql-experiments` branch.
 
+
+## Reflection
+
+For cases where you have custom reflection code, and Native Image isn't able to resolve it auotmatically, the best solution is to use programmatic reflection configuration. In Micronaut, use the ` @ReflectConfig` annotation. For example:
+
+```java
+package example.micronaut;
+
+import io.micronaut.core.annotation.ReflectionConfig;
+
+@ReflectionConfig(
+        type = StringReverser.class,
+        methods = {
+                @ReflectionConfig.ReflectiveMethodConfig(name = "reverse", parameterTypes = {String.class})
+        }
+)
+
+public class NativeImageConfig {
+}
+```
+
+
+
 To do
 
 [] try running MySQL via Rancher
