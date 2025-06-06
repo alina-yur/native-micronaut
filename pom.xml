@@ -6,7 +6,7 @@
   <groupId>com.example</groupId>
   <artifactId>library</artifactId>
   <version>0.1</version>
-  <packaging>jar</packaging>
+  <packaging>${packaging}</packaging>
 
   <parent>
     <groupId>io.micronaut.platform</groupId>
