@@ -23,6 +23,21 @@ mvn package -Dpackaging=native-image
 
 Now let's design our application. It will be a home library application, containing books and exposing several endpoints to retrieve them. For that, we added Library and Book classes, and a Controller, Service, and Repository to work with the data and interact with the user.
 
+## Annotations Processors 
+
+For Micronaut, the concept of annotation processors is very important, as Micronaut shifts most of the code discovery and generation to build time. So for example if you want to use Micronaut Serialization, you need to add the following to `annotationProcessorPaths` of `maven-compiler-plugin`:
+
+```xml
+<annotationProcessorPaths>
+    <path>
+        <groupId>io.micronaut.serde</groupId>
+        <artifactId>micronaut-serde-processor</artifactId>
+    </path>
+</annotationProcessorPaths>
+```
+
+
+
 ## Working with a Database 📚
 
 The Micronaut team highly encourages using [Flyway](https://micronaut-projects.github.io/micronaut-flyway/latest/guide/) for managing database schemas. Note that flyway migrations require full control over schema management. If you manually configure `datasources.default.schema-generate`, such as set it to `CREATE_DROP`, set it to `NONE` to ensure that only Flyway manages your schema.
@@ -60,6 +75,8 @@ public class NativeImageConfig {
 Micronaut Test Resources makes it easy to test applications that depend on external services like MySQL by automatically provisioning and managing those resources for you—no manual setup or container config needed. It integrates seamlessly with Testcontainers while removing the usual pain points: you don’t have to think about container lifecycles, and there’s no extra config needed, which means native image testing just works out of the box with ./gradlew nativeTest.
 
 It also supports development mode, so you can run your app locally (or multiple related projects) and reuse the same containerized services shared across cfor example lient and server projects. This siginificantly simplifies both local development and native testing.
+
+## Micronaut Serialization & Jackson
 
 
 ## To do
