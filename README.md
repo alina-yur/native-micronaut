@@ -78,6 +78,30 @@ It also supports development mode, so you can run your app locally (or multiple 
 
 ## Micronaut Serialization & Jackson
 
+## Micronaut Validation & Hibernate Validator
+
+## Micronaut Validation & LangChain4J
+
+```java
+package example;
+
+import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.UserMessage;
+import io.micronaut.langchain4j.annotation.AiService;
+
+@AiService
+public interface TravelAgent {
+    
+    @SystemMessage("You are a helpful travel agent. When asked about flights, provide realistic but fictional flight information including flight numbers, airlines, departure/arrival times, and prices.")
+    String findFlights(@UserMessage String request);
+    
+    @SystemMessage("You are a knowledgeable travel agent. When asked about hotels, provide realistic but fictional hotel information including hotel names, star ratings, and rates. Be enthusiastic and helpful.")
+    String findHotels(@UserMessage String request);
+    
+    @SystemMessage("You are an experienced travel advisor. Provide helpful travel tips, weather information, and local recommendations. Be informative and encouraging.")
+    String getTravelAdvice(@UserMessage String request);
+}
+```
 
 ## To do
 
