@@ -1,4 +1,3 @@
-// ReflectionController.java
 package com.example.demo;
 
 import io.micronaut.core.annotation.ReflectionConfig;
