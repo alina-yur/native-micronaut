@@ -1,5 +1,7 @@
 # Native Micronaut 👩‍🚀
 
+Micronaut is a JVM framework that shares the same philosophy as GraalVM Native Image: move work to build time for lightweight and fast applications at run time.
+
 ## Getting Started
 
 Go to [micronaut.io/launch](https://micronaut.io/launch/) and generate your project. You might want to pay attention to defaults — I chose latest Java, Maven, and JUnit. For the sake of this project, our demo will be called `library`.
