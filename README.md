@@ -80,7 +80,7 @@ It also supports development mode, so you can run your app locally (or multiple 
 
 ## Micronaut Validation & Hibernate Validator
 
-## Micronaut Validation & LangChain4J
+## Micronaut & LangChain4J
 
 ```java
 package example;
@@ -102,6 +102,11 @@ public interface TravelAgent {
     String getTravelAdvice(@UserMessage String request);
 }
 ```
+
+
+## Micronaut Control Panel
+
+The Micronaut Control Panel module provides a web UI that allows you to view and manage the state of your Micronaut application, typically in a development environment.
 
 ## To do
 
